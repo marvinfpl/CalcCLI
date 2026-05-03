@@ -12,12 +12,12 @@ var additionCmd = &cobra.Command{
 	Short: "Outputs the addition of two numbers",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd* cobra.Command, args []string) {
-		a, err := strconv.Atoi(args[0])
+		a, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[0])
 			return
 		}
-		b, err := strconv.Atoi(args[1])
+		b, err := strconv.ParseFloat(args[1], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[1])
 			return
@@ -32,17 +32,17 @@ var substrationCmd = &cobra.Command{
 	Short: "Outputs the substraction of two numbers",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd* cobra.Command, args []string) {
-		a, err := strconv.Atoi(args[0])
+		a, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[0])
 			return
 		}
-		b, err := strconv.Atoi(args[1])
+		b, err := strconv.ParseFloat(args[1], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[1])
 			return
 		}
-		result := mathematics.Substract(a, b)
+		result := mathematics.Subtract(a, b)
 		fmt.Println(result)
 	},
 }
@@ -52,12 +52,12 @@ var multiplyCmd = &cobra.Command{
 	Short: "Outputs the multiplication of two numbers",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
-		a, err := strconv.Atoi(args[0])
+		a, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[0])
 			return
 		}
-		b, err := strconv.Atoi(args[1])
+		b, err := strconv.ParseFloat(args[1], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[1])
 			return
@@ -72,17 +72,14 @@ var divideCmd = &cobra.Command{
 	Short: "Outputs the division of two numbers",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
-		a, err := strconv.Atoi(args[0])
+		a, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[0])
 			return
 		}
-		b, err := strconv.Atoi(args[1])
+		b, err := strconv.ParseFloat(args[1], 64)
 		if err != nil {
 			fmt.Println("invalid number:", args[1])
-			return
-		} else if b == 0 {
-			fmt.Println("Cannot divide by 0")
 			return
 		}
 		result, err := mathematics.Divide(a, b)

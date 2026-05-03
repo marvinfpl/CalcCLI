@@ -9,8 +9,11 @@ import (
 )
 
 var (
+	// Whether Cos(x) accepts radian or degrees as input.
 	cosUsesRad bool = false
+	// Whether Sin(x) accepts radian or degree as input.
 	sinUsesRad bool = false
+	// Base of Log(x, b).
 	base int
 )
 

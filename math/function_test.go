@@ -10,7 +10,6 @@ type testFunction struct {
 	result float64
 }
 
-
 func TestCos(t *testing.T) {
 	var tests = []testFunction{
 		{0.0, 1.0},

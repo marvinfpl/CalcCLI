@@ -5,9 +5,9 @@ import (
 )
 
 type testOperation struct {
-	a int
-	b int
-	result int
+	a float64
+	b float64
+	result float64
 }
 
 func TestAdd(t *testing.T) {
@@ -18,7 +18,7 @@ func TestAdd(t *testing.T) {
 
 	for _, test := range tests {
 		if Add(test.a, test.b) != test.result {
-			t.Errorf("Add(%d, %d) = %d, want %d", test.a, test.b, Add(test.a, test.b), test.result)
+			t.Errorf("Add(%f, %f) = %f, want %f", test.a, test.b, Add(test.a, test.b), test.result)
 		}
 	}
 }
@@ -30,8 +30,8 @@ func TestSubstract(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		if Substract(test.a, test.b) != test.result {
-			t.Errorf("Substract(%d, %d) = %d, want %d", test.a, test.b, Substract(test.a, test.b), test.result)
+		if Subtract(test.a, test.b) != test.result {
+			t.Errorf("Substract(%f, %f) = %f, want %f", test.a, test.b, Subtract(test.a, test.b), test.result)
 		}
 	}
 }
@@ -44,7 +44,7 @@ func TestMultiply(t *testing.T) {
 
 	for _, test := range tests {
 		if Multiply(test.a, test.b) != test.result {
-			t.Errorf("Multiply(%d, %d) = %d, want %d", test.a, test.b, Multiply(test.a, test.b), test.result)
+			t.Errorf("Multiply(%f, %f) = %f, want %f", test.a, test.b, Multiply(test.a, test.b), test.result)
 		}
 	}
 }
@@ -58,7 +58,7 @@ func TestDivide(t *testing.T) {
 	for _, test := range tests {
 		result, _ := Divide(test.a, test.b)
 		if  result != test.result {
-			t.Errorf("Divide(%d, %d) = %d, want %d", test.a, test.b, result, test.result)
+			t.Errorf("Divide(%f, %f) = %f, want %f", test.a, test.b, result, test.result)
 		}
 	}
 }
