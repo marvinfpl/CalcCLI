@@ -4,7 +4,7 @@ import (
 	"errors"
 )
 
-var ErrDivisionByZero = errors.New("Cannot divide by 0")
+var ErrDivisionByZero error = errors.New("Cannot divide by 0")
 
 // Returns the addition of 2 real numbers.
 //

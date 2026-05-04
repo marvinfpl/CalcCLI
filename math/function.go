@@ -37,7 +37,8 @@ func Exp(a float64) float64 {
 	return math.Exp(a)
 }
 
-//Returns the logarithm of the argument given the basis.
+// Returns the logarithm of the argument given the basis.
+// If the given basis is inferior to 0, it uses an exponential basis.
 //
 // Log(a, 0) returns the natural logarithm, exponential basis (Log(e, 0) = 1).
 //
